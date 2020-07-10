@@ -1,10 +1,22 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 
-export default function HomeScreen() {
+
+export default function FeedScreen({ navigation }) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
+    <View contentContainerStyle = {{ 
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        height : '100%',
+        width : '100%',
+        }}>
+        <Text> Home Screen </Text>
+        <Button
+            title = "Settings"
+            onPress = {() => navigation.navigate('Settings')}
+         />
       </View>
+
     );
   }
