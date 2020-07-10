@@ -1,42 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useState }from 'react';
-import { StyleSheet, Text, View, ScrollView, TextInput, SectionList } from 'react-native';
+import React from 'react';
+import { Text, View, Image } from 'react-native';
+import styled from 'styled-components/native';
 
-const App = () => {
-  return(
-    <View style={styles.container}>
-        <SectionList
-          sections={[
-            {title: 'D', data: ['Devin', 'Dan', 'Dominic']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        />
-      </View>
+const StyledView = styled.View`
+  flex: 1;
+  justify-content: center;
+`;
+
+const H1 = styled.Text`
+  font-size: 48px;
+  font-weight: bold;
+`;
+
+const P = styled.Text`
+  margin: 24px 0;
+  font-size: 18px;
+`;
+
+const Main = () => {
+  return (
+    <StyledView>
+      <H1>Hello world!</H1>
+      <P>This is my app.</P>
+      <Image source={require('./assets/hello-world.png')} />
+    </StyledView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-   flex: 1,
-   paddingTop: 22
-  },
-  sectionHeader: {
-    paddingTop: 2,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 2,
-    fontSize: 14,
-    fontWeight: 'bold',
-    backgroundColor: 'rgba(247,247,247,1.0)',
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
-})
-
-export default App
+export default Main;
