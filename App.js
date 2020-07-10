@@ -22,7 +22,7 @@ const Main = () => {
     <StyledView>
       <H1>Hello world!</H1>
       <P>This is my app.</P>
-      <Image source={require('./assets/hello-world.png')} />
+      <Image source={require("./assets/hello-world.png")} />
     </StyledView>
   );
 };
