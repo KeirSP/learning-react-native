@@ -1,32 +1,20 @@
-import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-// import screen components
-import Feed from './feed';
-import Favorites from './favorites';
 import MyNotes from './mynotes';
+import Feed from './feed'
+import Favorites from './favorites'
 
-const TabNavigator = createBottomTabNavigator({
-    FeedScreen: {
-      screen: Feed,
-      navigationOptions: {
-        tabBarLabel: 'Feed',
-      }
-    },
-    MyNoteScreen: {
-        screen: MyNotes,
-        navigationOptions: {
-          tabBarLabel: 'My Notes',
-        }
-      },
-      FavoriteScreen: {
-        screen: Favorites,
-        navigationOptions: {
-          tabBarLabel: 'Favorites',
-        }
-      }
-    });
+const Tab = createBottomTabNavigator();
 
-    // create the app container
-export default createAppContainer(TabNavigator);
+export default function Screens() {
+  return(
+    <NavigationContainer>
+      <Tab/>
+      <Tab/>
+      <Tab/>
+    </NavigationContainer>
+  )
+}
