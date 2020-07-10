@@ -12,9 +12,9 @@ const Tab = createBottomTabNavigator();
 export default function Screens() {
   return(
     <NavigationContainer>
-      <Tab/>
-      <Tab/>
-      <Tab/>
+      <Tab.Screen name = "My Notes" component = {MyNotes}/>
+      <Tab.Screen name = "Feed" component = {Feed}/>
+      <Tab.Screen name = "Favorites" component = {Favorites}/>
     </NavigationContainer>
   )
 }
