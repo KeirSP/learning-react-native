@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FeedScreen from './src/screens/HomeScreen'
 import SettingsScreen from './src/screens/SettingsScreen'
 

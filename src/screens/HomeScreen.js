@@ -1,22 +1,27 @@
 import * as React from 'react';
 import { Text, View, Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import FeedOne from '../components/FeedOne';
+import FeedTwo from '../components/FeedTwo';
 
 
-export default function FeedScreen({ navigation }) {
-    return (
-    <View contentContainerStyle = {{ 
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        height : '100%',
-        width : '100%',
-        }}>
-        <Text> Home Screen </Text>
-        <Button
-            title = "Settings"
-            onPress = {() => navigation.navigate('Settings')}
-         />
-      </View>
+const FeedStack = createStackNavigator();
 
-    );
-  }
+export default function FeedScreen() {
+ return (
+   <FeedStack.Navigator>
+    <FeedStack.Screen 
+        name="Feed One" 
+        component={FeedOne}
+        options = {{
+            title: "Feed the First"
+    }} />             
+    <FeedStack.Screen 
+        name="Feed Two" 
+        component={FeedTwo}
+        options = {{
+            title: "Feed the Second"
+        }} />
+   </FeedStack.Navigator>
+  );
+}
